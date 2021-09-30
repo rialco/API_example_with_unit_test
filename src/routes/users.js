@@ -1,10 +1,12 @@
 const express = require('express');
+const ApiError = require('../utils/ApiError');
 
 const router = express.Router();
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
+  // throw new ApiError('Bad request', 400);
+  res.json({ data: 'my users route' });
 });
 
 module.exports = router;
